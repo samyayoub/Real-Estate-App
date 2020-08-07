@@ -1,6 +1,10 @@
 body {
 	background-color: rgb(21, 49, 109);
+	/* background: image_url("vintage-concrete.png"); */
+	font-family: "Hind Guntur", sans-serif;
+	font-weight: 400;
 }
+
 .booyah-box {
 	-moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
 	-webkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
@@ -8,13 +12,40 @@ body {
 	background: #fff;
 	border: 1px solid #ccc;
 	border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
-	padding: 10px;
+	padding: 3%;
 	margin: 3%;
+	width: auto;
+	height: auto;
 	border-radius: 15px;
-	display: block;
-	align-content: center;
+	/* justify-self: center; */
 }
 
 .clear {
 	clear: both;
 }
+
+.container {
+	display: grid;
+	grid-template-columns: 40% 60%;
+	grid-column-gap: 15px;
+	justify-self: start;
+	align-items: center;
+	margin: 0.5%;
+	padding: auto;
+}
+
+.containerColumns {
+	display: grid;
+	grid-template-columns: auto;
+	justify-items: center;
+	align-items: center;
+	margin: auto;
+}
+
+/* .itemText {
+	flex-basis: 20em;
+}
+
+.itemBox {
+	flex-basis: 40em;
+} */
