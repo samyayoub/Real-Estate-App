@@ -42,6 +42,24 @@ body {
 	margin: auto;
 }
 
+input[type="text"] {
+	width: 75px;
+	box-sizing: border-box;
+	border: 2px solid #ccc;
+	border-radius: 9px;
+	font-size: 12px;
+	background-color: white;
+	/* background-image: url('searchicon.png'); */
+	/* background-position: 10px 10px;
+	background-repeat: no-repeat; */
+	padding: 6px 6px 6px 6px;
+	transition: width 0.4s ease-in-out;
+}
+
+input[type="text"]:focus {
+	width: 100%;
+}
+
 /* .itemText {
 	flex-basis: 20em;
 }
