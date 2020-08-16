@@ -1,16 +1,23 @@
+var interestTotal, loanValue, paidTotal;
+
 // Calling function to calculate results
 var calculateMonthlyPayment = document.querySelector(
 	"#calculateMonthlyPayment"
 );
-var calculateInterestPaid = document.querySelector("#calculateInterestPaid");
+var calculatePaid = document.querySelector("#calculatePaid");
 
 function monthlyPaymentCalculations() {
 	// Grabbing values entered by end user
-	var loanValue = document.querySelector("#loanValue").value;
+	loanValue = document.querySelector("#loanValue").value;
 	var loanTerm = document.querySelector("#loanTerm").value;
 	var loanInterest = document.querySelector("#loanInterest").value;
 	var interest = loanInterest / 100;
 	interest = interest / 12;
+
+	// loanValue = loanValue
+	// 	.toFixed(2)
+	// 	.toString()
+	// 	.replace(/\B(?=(\d{3})+(?!\d))/g, ","); // Puts comma for thousands
 
 	// Math to calculate monthly payment
 	// D = {[(1 + r)^n] - 1} / [r(1 + r)^n]
@@ -19,38 +26,31 @@ function monthlyPaymentCalculations() {
 	var temp2 = temp1 - 1;
 	var temp3 = interest * temp1;
 	var temp4 = temp2 / temp3;
-	var result = loanValue / temp4;
-	result = result
+	window.result = loanValue / temp4;
+	window.result = window.result
 		.toFixed(2)
 		.toString()
 		.replace(/\B(?=(\d{3})+(?!\d))/g, ","); // Puts comma for thousands
 
 	document.querySelector(
 		"#result"
-	).innerHTML = `Monthly mortgage payment = $${result}`;
+	).innerHTML = `Monthly mortgage payment = $${window.result}`;
 }
 
-// function calculations() {
-// 	monthlyPaymentCalculations();
-// 	interestCalculations();
-// }
-
-function interestCalculations() {
-	var loanValue = document.querySelector("#loanValue").value;
+function paidCalculations() {
+	loanValue = document.querySelector("#loanValue").value;
 	var loanTerm = document.querySelector("#loanTerm").value;
-	var loanInterest = document.querySelector("#loanInterest").value;
-	var interest = loanInterest / 100;
-	let interestTotal = loanValue * interest * loanTerm;
-	interestTotal = interestTotal
-		.toFixed(2)
-		.toString()
-		.replace(/\B(?=(\d{3})+(?!\d))/g, ","); // Puts comma for thousands
+
+	let paidTotal = window.result * loanTerm * 12;
+	let interestPaid = paidTotal - loanValue;
+	paidTotal = paidTotal.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ","); // Puts comma for thousands
+	interestPaid = interestPaid.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ","); // Puts comma for thousands
 
 	document.querySelector(
 		"#result"
-	).innerHTML = `Total Interest will be paid = ${interestTotal}`;
+	).innerHTML = `Total Interest will be paid = $${interestPaid} with total of $${paidTotal}`;
 }
 
-// Adding event listener to wait on end user to press "Calculate" button
+// Adding event listeners to wait on end user to press "Calculate" button
 calculateMonthlyPayment.addEventListener("click", monthlyPaymentCalculations);
-calculateInterestPaid.addEventListener("click", interestCalculations);
+calculatePaid.addEventListener("click", paidCalculations);

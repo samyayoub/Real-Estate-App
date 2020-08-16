@@ -27,20 +27,21 @@
                     <!-- <br class="clear" /> -->
                     <div class="container">
                         <h5 class="itemText">Loan Value: </h5>
-                        <input type="text" class="itemBox" id="loanValue"></input>
+                        <input type="number" class="itemBox" id="loanValue" min="100" max="100000000"></input>
                     </div>
                     <div class="container">
                         <h5 class="itemText">Loan term: </h5>
-                        <input type="text" class="itemBox" id="loanTerm"></input>
+                        <input type="number" class="itemBox" id="loanTerm" min="1" max="30"></input>
                     </div>
                     <div class="container">
                         <h5 class="itemText">Interest rate: </h5>
-                        <input type="text" class="itemBox" id="loanInterest"></input>
+                        <input type="number" class="itemBox" id="loanInterest"></input>
                     </div>
                 </div>
-                <div>
+                <div class="conatiner">
                     <button id="calculateMonthlyPayment">Calculate Monthly Payment</button>
-                    <button id="calculateInterestPaid">Calculate Interest Paid</button>
+                    <button id="calculatePaid">Calculate Total Paid</button>
+                    <!-- <button id="calculateTotalPaid">Calculate Total Paid</button> -->
                     <h3 id="result"></h3>
                 </div>
             </div>

@@ -26,7 +26,7 @@ body {
 
 .container {
 	display: grid;
-	grid-template-columns: 40% 60%;
+	grid-template-columns: 55% 45%;
 	grid-column-gap: 15px;
 	justify-self: start;
 	align-items: center;
@@ -42,8 +42,8 @@ body {
 	margin: auto;
 }
 
-input[type="text"] {
-	width: 75px;
+input[type="number"] {
+	width: 100px;
 	box-sizing: border-box;
 	border: 2px solid #ccc;
 	border-radius: 9px;
@@ -58,6 +58,13 @@ input[type="text"] {
 
 input[type="text"]:focus {
 	width: 100%;
+}
+
+button {
+	border-radius: 5px;
+	margin: 5px;
+	padding: 9px;
+	font-size: small;
 }
 
 /* .itemText {
