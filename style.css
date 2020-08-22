@@ -1,14 +1,15 @@
 body {
-	background-color: rgb(21, 49, 109);
+	background-color: white;
 	/* background: image_url("vintage-concrete.png"); */
 	font-family: "Hind Guntur", sans-serif;
 	font-weight: 400;
 }
 
 .booyah-box {
-	-moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
-	-webkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
-	box-shadow: 1px 1px 2px 0 #d0d0d0;
+	box-shadow: -10px 10px 10px rgba(109, 109, 109, 0.3);
+	-moz-box-shadow: -10px 10px 10px rgba(109, 109, 109, 0.3);
+	-webkit-box-shadow: -10px 10px 10px rgba(109, 109, 109, 0.3);
+	-o-box-shadow: -10px 10px 10px rgba(109, 109, 109, 0.3);
 	background: #fff;
 	border: 1px solid #ccc;
 	border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
@@ -60,11 +61,17 @@ input[type="text"]:focus {
 	width: 100%;
 }
 
-button {
+.button {
 	border-radius: 5px;
 	margin: 5px;
 	padding: 9px;
 	font-size: small;
+}
+
+.button:hover {
+	-webkit-box-shadow: inset 5px 5px 21px -9px rgba(109, 109, 109, 0.5);
+	-moz-box-shadow: inset 5px 5px 21px -9px rgba(109, 109, 109, 0.5);
+	box-shadow: inset 5px 5px 21px -9px rgba(109, 109, 109, 0.5);
 }
 
 /* .itemText {
